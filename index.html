@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sola</title>
+</head>
+<body>
+    <div class="logo_fadein">
+        <p><img src="logo1.png" alt="Logo"></p>
+    </div>
+
+
+    <video src="video1.mp4" autoplay muted playsinline loop></video>
+
+<!--
+    <div class="video">
+        <p><img src="home1.png" alt="Logo" style="width: 1200px;"></p>
+    </div>
+-->
+    <div id="content">
+    <div class="blue-box">
+        <h2>About</h2>
+        <ul>
+            <li><strong>Name:</strong> 大浦　空</li>
+            <li><strong>Occupation:</strong> 大学2年生</li>
+            <li><strong>Language:</strong> 中級レベルの英語<br>　　　　　　TOEIC 675, 2024<br></li>
+            <li><strong>Strengths:</strong> PowerPointのスキルに優れる<br>　　　　　　行動力がある / リーダーシップを発揮できる</li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <h2>Achievements</h2>
+        <ul class="details">
+            <li>10/6/2024 千葉県オープンデータコネクティッドアイデアソン<br>　　　　　千葉銀行賞 JMAS賞 シビックテック賞</li>
+            <li>11/3/2024 SPAJAM道場 最優秀賞</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Products</h2>
+        <ul class="details">
+            <li><strong style="text-align:center">On Developing:</strong></li>
+            <ul>
+                <li>タスク管理アプリ (Glide)</li>
+                <li>引っ越し支援アプリ (FlutterFlow)</li>
+                <li>予定共有アプリ-visuy- (FlutterFlow)</li>
+            </ul>
+            <li><strong style="text-align:center">Developed:</strong></li>
+            <ul>
+                <li>Galringal</li>
+            </ul>
+        </ul>        
+    </div>
+    </div>
+
+
+    <div class="container">
+        <h2>Diary</h2>
+        <ul class="details">
+            <li>2024/11/23　サイト作成</li>
+        </ul>
+    </div>
+
+    <!-- 必要なスクリプトを最後に配置 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            const fadeInTime = 1000;  // フェードイン時間
+            const fadeOutTime = 1000; // フェードアウト時間
+            const displayDuration = 2500; // 表示時間
+
+            // ページを直接開いた場合のみロゴアニメーションを再生
+            if (document.referrer === "" || !document.referrer.includes(window.location.origin)) {
+                // ロゴをフェードイン
+                setTimeout(function () {
+                    $('.logo_fadein p').fadeIn(fadeInTime);
+                }, 500);
+
+                // 背景をフェードアウト
+                setTimeout(function () {
+                    $('.logo_fadein').fadeOut(fadeOutTime);
+                }, displayDuration);
+            } else {
+                // 他のページから遷移してきた場合はロゴを即座に非表示
+                $('.logo_fadein').remove();
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
