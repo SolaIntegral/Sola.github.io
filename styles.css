@@ -7,8 +7,6 @@
     height: 100%;
     width: 100%;
     z-index: 999;
-
-    /* Flexbox を使用して中央配置 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,7 +102,6 @@ nav ul li a::after {
     height: 100%;
     background: linear-gradient(to left, #fff 34%, #ff6f61 34%, #ffcc33 66%, #00afcc 66%);
     z-index: -1;
-    transition: right 0.6s;
 }
 
 /* ホバー効果 */
@@ -116,16 +113,16 @@ nav ul li a:hover::after {
     right: -200%;
 }
 
+/* 動画 */
 video {
-    max-width: 100%; /* 動画が親要素の幅を超えないように */
-    max-height: 100vh; /* 動画が画面の高さを超えないように */
-    display: block; /* ブロック要素として扱う */
-    margin: 0 auto; /* 動画を中央揃え */
-    object-fit: cover; /* 動画を親要素にフィット */
-    background-color: #fff; /* 動画が読み込まれるまで背景色を表示 */
+    max-width: 100%;
+    max-height: 100vh;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    background-color: #fff;
 }
 
-/*blue-box*/
 .blue-box {
     background-color: #00afcc; /* 背景色を青に設定 */
     color: white; /* テキスト色を白に設定 */
@@ -162,7 +159,6 @@ video {
     word-wrap: break-word; /* 長い内容を折り返す */
 }
 
-/*white-box*/
 .white-box {
     background-color: #fff; /* 背景色を青に設定 */
     color: black; /* テキスト色を白に設定 */
@@ -199,7 +195,6 @@ video {
     word-wrap: break-word; /* 長い内容を折り返す */
 }
 
-/* コンテンツエリアのスタイル */
 .container {
     background-color: #fff; /* 背景色を青に設定 */
     color: black; /* テキスト色を白に設定 */
@@ -211,6 +206,7 @@ video {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* コンテンツ全体に影を追加 */
     text-align: center; /* テキストを中央揃え */
 }
+
 h1 {
     font-size: 40px; /* 見出しのフォントサイズを大きく */
     margin: 50px auto; /* 見出しと内容の間の余白を増やす */
@@ -250,4 +246,70 @@ ul.details li {
     align-items: center; /* 中央揃え */
     justify-content: center; /* 垂直方向の中央揃え */
     padding: 20px; /* 内側の余白 */
+}
+
+
+
+/* ポップアップ */
+#popup {
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        width: auto;
+        margin: 5px 0;
+    }
+
+    #popup {
+        width: 90%;
+    }
+
+    .blue-box, .white-box, .container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .blue-box li, .white-box li {
+        font-size: 18px;
+    }
+}
+
+
+#popup-content {
+    max-height: 300px; /* 最大高さを設定 */
+    overflow-y: auto; /* 内容が多い場合スクロール */
+}
+
+
+#popup-close {
+    color: #333;
+}
+
+#overlay {
+    background: rgba(0, 0, 0, 0.5);
 }
